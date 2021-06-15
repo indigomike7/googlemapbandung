@@ -6,9 +6,44 @@
     <title>Maps</title>
     <script src="{{ asset('js/app.js') }}" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+	<style>
+	#divchart{
+		display:none;
+	}
+	#divhide{
+		display:none;
+	}
+	#divshow{
+		display:block;
+	}
+	</style>
+	<script type="text/javascript">
+	function show() {
+		var x = document.getElementById("divchart");
+		var y = document.getElementById("divshow");
+		var z = document.getElementById("divhide");
+		x.style.display = "block";
+		y.style.display = "none";
+		z.style.display = "block";
+	}
+	function hide() {
+		var x = document.getElementById("divchart");
+		var y = document.getElementById("divshow");
+		var z = document.getElementById("divhide");
+		x.style.display = "none";
+		y.style.display = "block";
+		z.style.display = "none";
+	}
+	</script>
 </head>
 <body>
 <?php if($posted==true){?>
+<div id="divshow">
+<a href="javascript:show();">Show Analytics</a>
+</div>
+<div id="divhide">
+<a href="javascript:hide();">Hide Analytics</a>
+</div>
 <div id="divchart">
 	<div style="float:left; width:20%;">
 	<h1>Analisa berdasarkan Logo</h1><br/><br/>
